@@ -20,6 +20,7 @@ namespace lab7.Controllers
 			return View();
 		}
 
+		[Authorize]
 		public ActionResult MyImages()
 		{
 			var myimageList = new List<string>();
@@ -32,6 +33,8 @@ namespace lab7.Controllers
 			return View(myimageList);
 		}
 
+
+		[Authorize]
 		public ActionResult UploadImage()
 		{
 			ViewBag.error = null;
@@ -39,6 +42,7 @@ namespace lab7.Controllers
 		}
 
 		[HttpPost]
+		[Authorize]
 		public ActionResult UploadImage(string imagename, HttpPostedFileBase picture)
 		{
 			string error = null;
@@ -71,6 +75,7 @@ namespace lab7.Controllers
 			return RedirectToAction("MyImages");
 		}
 
+		[Authorize]
 		public List<string> GetUserImages(string groupname)
 		{
 
@@ -95,6 +100,7 @@ namespace lab7.Controllers
 		}
 
 
+		[Authorize]
 		public ActionResult GetAllGropUserImages()
 		{
 			List<string> imageList = new List<string>();
@@ -124,6 +130,7 @@ namespace lab7.Controllers
 
 		}
 
+		[Authorize]
 		public ActionResult ViewUsers()
 		{
 			var db = new Models.ApplicationDbContext();
@@ -132,6 +139,7 @@ namespace lab7.Controllers
 			return View(groupusers);
 		}
 
+		[Authorize]
 		public ActionResult DeleteUser(string email)
 		{
 			using (var db = new Models.ApplicationDbContext())
@@ -144,6 +152,7 @@ namespace lab7.Controllers
 		}
 
 		[HttpPost]
+		[Authorize]
 		public ActionResult deletepicture(string picname) 
 		{
 			var picturelink = Server.MapPath(picname);
