@@ -1,0 +1,39 @@
+﻿@model List<string>
+
+@{
+	ViewBag.Title = "Home Page";
+}
+<br />
+<br />
+<div class="row">
+	<div class="col-md-12">
+
+		@if (!Model.Any())
+			{
+			<strong>You have not uploaded any image yet!!!!</strong>
+			}
+			else
+			{
+				foreach (var p in Model)
+				{
+				<span class="col-md-2">
+					<span class="col-md-12" style="text-align:center">
+
+						<img src="~/ImageFolders/@ViewBag.groupname/@User.Identity.Name/@p" height="100" width="100" />
+					</span>
+					<br />
+					<span class="col-md-12" style="text-align:center">
+
+						@using (Html.BeginForm("deletepicture", "Home"))
+					{
+					<input type="hidden" name="picname" value="~/ImageFolders/@ViewBag.groupname/@User.Identity.Name/@p" />
+					<input type="submit" value="Delete" class="btn btn-info btn-sm"/>
+					}
+					</span>
+
+				</span>
+
+			}
+		}
+	</div>
+</div>

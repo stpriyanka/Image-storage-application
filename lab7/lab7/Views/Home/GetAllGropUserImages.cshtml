@@ -1,0 +1,12 @@
+﻿@model List<string>
+@{
+	ViewBag.Title = "GetAllGropUserImages";
+}
+<br />
+<br />
+
+@foreach (var i in Model)
+{
+	<img src="@(i)" height="100" width="100" />
+}
+

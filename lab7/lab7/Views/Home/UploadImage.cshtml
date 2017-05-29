@@ -1,0 +1,36 @@
+﻿
+@{
+	ViewBag.Title = "UploadImage";
+}
+
+<h2>UploadImage</h2>
+@if (ViewBag.error!=null)
+{
+	<span class = "text-danger">
+		@ViewBag.error
+	</span>
+}
+@using (Html.BeginForm("UploadImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+	<div class="form-group">
+		@Html.Label("Choose Image Name:", htmlAttributes: new { @class = "control-label col-md-2" })
+		<div class="col-md-10">
+			<input type="text" name="imagename" />
+		</div>
+	</div>
+	<br />
+	<br />
+	<br />
+	<div class="form-group">
+		@Html.Label("Choose Image:", htmlAttributes: new { @class = "control-label col-md-2" })
+		<div class="col-md-10">
+			<input type="file" name="picture" />
+		</div>
+	</div>
+	<br />
+	<br />
+	<br />
+	<input type="submit" value="Upload" />
+
+}

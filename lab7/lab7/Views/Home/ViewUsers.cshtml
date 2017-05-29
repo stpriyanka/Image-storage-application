@@ -1,0 +1,46 @@
+﻿@model IEnumerable<lab7.Models.ApplicationUser>
+
+@{
+	ViewBag.Title = "ViewUsers";
+}
+
+<h2>ViewUsers</h2>
+
+
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.GroupName)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Email)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.UserName)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+
+	<tr>
+		<td>
+			@Html.DisplayFor(modelItem => item.GroupName)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Email)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.UserName)
+		</td>
+		<td>
+			@if (User.IsInRole("Admin") && item.UserName!=User.Identity.Name)
+			{
+			@Html.ActionLink("Delete", "DeleteUser", new { email = item.Email })
+			}
+		</td>
+	</tr>
+	}
+
+</table>
