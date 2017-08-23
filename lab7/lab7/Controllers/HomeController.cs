@@ -23,14 +23,31 @@ namespace lab7.Controllers
 		[Authorize]
 		public ActionResult MyImages()
 		{
-			var myimageList = new List<string>();
+			
+
+			List<string> imageList = new List<string>();
 			using (var db = new Models.ApplicationDbContext())
 			{
 				var user = db.Users.Where(r => r.UserName == User.Identity.Name).FirstOrDefault();
-				myimageList = GetUserImages(user.GroupName);
-				ViewBag.groupname = user.GroupName;
+				var groupusernames = db.Users.Where(r => r.GroupName == user.GroupName).ToList();
+				var GroupFolderName = string.Format("~/ImageFolders/{0}", user.GroupName);
+
+				foreach (var groupUSer in groupusernames.Where(r=>r.Email==user.Email))
+				{
+					var userdirectory = new DirectoryInfo(Server.MapPath(GroupFolderName + "/" + groupUSer.Email));
+					var userDirectory = GroupFolderName + "/" + groupUSer.Email;
+					foreach (var file in userdirectory.GetFiles())
+					{
+						if (!imageList.Contains(file.Name))
+						{
+							imageList.Add(userDirectory.Split('~').LastOrDefault() + "/" + file.Name);
+						}
+					}
+
+				}
 			}
-			return View(myimageList);
+
+			return View(imageList);
 		}
 
 

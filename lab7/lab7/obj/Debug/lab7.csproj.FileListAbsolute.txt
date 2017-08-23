@@ -157,6 +157,6 @@ C:\github\lab7\lab7\lab7\lab7\bin\Microsoft.Owin.Security.OAuth.xml
 C:\github\lab7\lab7\lab7\lab7\bin\Microsoft.Owin.Security.Google.xml
 C:\github\lab7\lab7\lab7\lab7\bin\Microsoft.Owin.Security.Twitter.xml
 C:\github\lab7\lab7\lab7\lab7\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\github\lab7\lab7\lab7\lab7\obj\Debug\lab7.csprojResolveAssemblyReference.cache
 C:\github\lab7\lab7\lab7\lab7\obj\Debug\lab7.dll
 C:\github\lab7\lab7\lab7\lab7\obj\Debug\lab7.pdb
+C:\github\lab7\lab7\lab7\lab7\obj\Debug\lab7.csprojResolveAssemblyReference.cache

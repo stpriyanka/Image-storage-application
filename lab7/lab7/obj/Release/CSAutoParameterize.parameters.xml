@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="lab7_db-Web.config Connection String" description="lab7_db Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:labsevencontext.database.windows.net,1433;Initial Catalog=labsevencontext;Persist Security Info=False;User ID=DbUser;Password=Password12;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\github\\lab7\\lab7\\lab7\\lab7\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='lab7_db']/@connectionString" />
+  </parameter>
+</parameters>

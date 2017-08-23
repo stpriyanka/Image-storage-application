@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="labSevenApp" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\github\\lab7\\lab7\\lab7\\lab7\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\github\\lab7\\lab7\\lab7\\lab7\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="lab7_db-Web.config Connection String" description="" value="Data Source=tcp:labsevencontext.database.windows.net,1433;Initial Catalog=labSevenContext;User Id=DbUser@labsevencontext.database.windows.net;Password=Password12" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\github\\lab7\\lab7\\lab7\\lab7\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='lab7_db']/@connectionString" />
+  </parameter>
+</parameters>
